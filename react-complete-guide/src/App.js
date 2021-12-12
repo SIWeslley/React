@@ -1,3 +1,5 @@
+import React from "react";
+import NewExpense from "./Components/NewExpense/NewExpense";
 import Expenses from "./Components/Expenses/Expenses";
 
 const App = () => {
@@ -23,12 +25,17 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = expense =>{
+    console.log('in app.js')
+    console.log(expense)
+  }
+
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense onAddExpenses={addExpenseHandler}/>
       <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;
